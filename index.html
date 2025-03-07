@@ -28,6 +28,7 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
+            position: relative; /* Ensure the logo can be positioned absolutely */
         }
         .logo {
             font-size: 34px;
@@ -35,6 +36,9 @@
             color: white;
             display: flex;
             align-items: center;
+            position: absolute; /* Position it at the top-right corner */
+            top: 20px;
+            right: 20px;
         }
         .logo img {
             width: 50px;
@@ -170,6 +174,10 @@
                 alert("Incorrect password. Please try again.");
             }
         }
+    </script>
+</body>
+</html>
+
     </script>
 </body>
 </html>
