@@ -21,37 +21,42 @@
             background-color: #0e0e0e;
             padding: 30px;
             border-radius: 25px;
-            width: 1000px;
-            height: 375px;
+            width: 600px;
+            height: 400px;
             color: white;
             display: flex;
             justify-content: center;
             flex-direction: column;
-            align-items: center;
-            position: relative; /* Ensure the logo can be positioned absolutely */
+            position: relative;
         }
         .logo {
             font-size: 34px;
             font-weight: bold;
             color: white;
+            position: absolute;
+            top: 20px;
+            left: 20px;
             display: flex;
             align-items: center;
-            position: absolute; /* Position it at the top-right corner */
-            top: 20px;
-            right: 20px;
         }
         .logo img {
             width: 50px;
             margin-right: 10px;
         }
         .text {
+            text-align: center;
+            margin-top: 70px;
+        }
+        #signinText {
             font-size: 24px;
             font-weight: 500;
-            margin-top: 20px;
-            margin-bottom: 20px;
+        }
+        #useGoogleText {
+            font-size: 16px;
+            font-weight: 300;
         }
         .input-box {
-            width: 100%;
+            width: 50%;
             padding: 10px;
             margin-top: 15px;
             border: 2px solid #333; 
@@ -69,11 +74,17 @@
         .forgot-email-link {
             align-self: flex-start;
             margin-top: -10px;
+            margin-left: 10px;
+        }
+        .guest-mode {
+            font-size: 12px;
+            color: white;
+            margin-top: 15px;
+            text-align: left;
         }
         .btn-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-end;
             margin-top: 20px;
         }
         .btn {
@@ -84,7 +95,6 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
-            margin-left: 10px;
         }
         .footer {
             margin-top: 20px;
@@ -116,18 +126,24 @@
             <p id="useGoogleText">Use your Google Account</p>
         </div>
 
+        <!-- Forgot Email Link -->
+        <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
+
         <!-- Email or Phone Input -->
         <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
         
         <!-- Password Input (hidden initially) -->
         <input type="password" id="passwordInput" class="input-box" placeholder="Password" style="display: none;">
 
-        <br>
-        <a href="#" class="link forgot-email-link" style="display: none;" id="forgotEmailLink">Forgot email?</a>
-        <p id="guestModeText" style="display: none;">Not your computer? Use a private browsing window to sign in. <br>
-           <a href="#" class="link">Learn more about using Guest mode</a></p>
+        <!-- Guest Mode Text -->
+        <div class="guest-mode">
+            Not your computer? Use a private browsing window to sign in. <br>
+            <a href="#" class="link">Learn more about using Guest mode</a>
+        </div>
+
+        <!-- Button Container -->
         <div class="btn-container">
-            <a href="#" class="link" style="display: none;" id="createAccountLink">Create account</a>
+            <a href="#" class="link" id="createAccountLink" style="align-self: center;">Create account</a>
             <button class="btn" id="nextButton" onclick="goToPasswordPage()">Next</button>
         </div>
     </div>
@@ -135,12 +151,12 @@
     <!-- Footer Section -->
     <div class="footer">
         <div class="left">
+            <a href="#">English (United Kingdom)</a>
+        </div>
+        <div class="right">
             <a href="#">Help</a> | 
             <a href="#">Privacy</a> | 
             <a href="#">Terms</a>
-        </div>
-        <div class="right">
-            <a href="#">English (United Kingdom)</a>
         </div>
     </div>
 
@@ -174,10 +190,6 @@
                 alert("Incorrect password. Please try again.");
             }
         }
-    </script>
-</body>
-</html>
-
     </script>
 </body>
 </html>
