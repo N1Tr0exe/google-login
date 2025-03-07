@@ -22,7 +22,7 @@
             padding: 30px;
             border-radius: 25px;
             width: 1000px;
-            height: 380px; /* Increased the height */
+            height: 480px; /* Increased the height */
             color: white;
             display: flex;
             justify-content: flex-start;
@@ -58,9 +58,9 @@
             font-weight: 300;
         }
         .input-box {
-            width: 40%; /* Centered the input box */
+            width: 40%; /* Moved the input box to the right */
             padding: 10px;
-            margin-top: 10px;
+            margin-top: 20px; /* Adjusted the margin to move it higher */
             border: 2px solid #333; 
             background-color: #0e0e0e;
             color: white;
@@ -68,7 +68,7 @@
             font-size: 16px;
             height: 40px;
             margin-left: auto;
-            margin-right: auto; /* Center horizontally */
+            margin-right: 0; /* Moved it to the right */
         }
         .link {
             color: #8ab4f8;
@@ -76,18 +76,18 @@
             font-size: 14px;
         }
         .forgot-email-link {
-            align-self: center;
-            margin-top: 10px; /* Moved it under the email input box */
+            margin-left: 0; /* Move forgot email text to the left */
+            margin-top: 10px;
         }
         .guest-mode {
             font-size: 14px; /* Increased font size */
             color: white;
-            margin-top: 15px;
-            text-align: center; /* Centered the guest mode text */
+            margin-top: 10px;
+            text-align: left; /* Align left */
         }
         .btn-container {
             display: flex;
-            justify-content: center; /* Center buttons */
+            justify-content: flex-start; /* Align to the left side */
             margin-top: 10px;
         }
         .btn {
@@ -98,7 +98,7 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
-            margin-left: 10px;
+            margin-right: 10px; /* Adjust margin for spacing */
         }
         .footer {
             margin-top: 30px;
@@ -130,23 +130,23 @@
         </div>
 
         <!-- Form Inputs and Links on the Right -->
-        <div style="display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 20px;">
+        <div style="display: flex; flex-direction: column; width: 100%; margin-top: 20px; align-items: flex-start;">
             <!-- Forgot Email Link -->
             <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
-            <!-- Email or Phone Input -->
+            <!-- Email or Phone Input (moved to right) -->
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
 
             <!-- Password Input (hidden initially) -->
             <input type="password" id="passwordInput" class="input-box" placeholder="Password" style="display: none;">
             
-            <!-- Guest Mode Text -->
+            <!-- Not your computer text and other info moved to the right -->
             <div class="guest-mode">
                 Not your computer? Use a private browsing window to sign in. <br>
                 <a href="#" class="link">Learn more about using Guest mode</a>
             </div>
 
-            <!-- Button Container -->
+            <!-- Button Container (moved to right) -->
             <div class="btn-container">
                 <a href="#" class="link" id="createAccountLink">Create account</a>
                 <button class="btn" id="nextButton" onclick="goToPasswordPage()">Next</button>
@@ -156,7 +156,7 @@
 
     <!-- Footer Section -->
     <div class="footer">
-        <a href="#">English (United Kingdom)           </a>
+        <a href="#">English (United Kingdom)</a>
         <a href="#">Help</a> | 
         <a href="#">Privacy</a> | 
         <a href="#">Terms</a>
