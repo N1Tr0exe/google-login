@@ -10,7 +10,6 @@
             color: black;
             font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -19,17 +18,29 @@
         .container {
             background-color: #0e0e0e;
             padding: 30px;
-            border-radius: 25px;  /* More rounded edges */
+            border-radius: 25px;
             width: 1000px;
-            height: 360px; /* Slightly shorter */
-            text-align: center;
+            height: 320px;
             color: white;
+            display: flex;
+            justify-content: space-between;
             position: relative;
         }
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            width: 50%;
+        }
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            width: 50%;
+        }
         .logo {
-            position: absolute;  /* Move the logo to the top left corner */
-            top: 20px;
-            left: 20px;
             font-size: 28px;
             font-weight: bold;
             color: white;
@@ -43,15 +54,11 @@
         .text {
             font-size: 18px;
             margin-top: 60px;
-            text-align: left;
-            position: absolute;
-            left: 20px; /* Align text to the left */
-            top: 80px; /* Place the text below the logo */
         }
         .input-box {
             width: 100%;
             padding: 10px;
-            margin-top: 15px; /* Adjust margin for better placement */
+            margin-top: 15px;
             background: #333;
             border: none;
             color: white;
@@ -116,21 +123,26 @@
 <body>
     <!-- Email Input Page -->
     <div class="container" id="emailPage">
-        <div class="logo">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Google_2015_logo.svg" alt="Google Logo">
+        <div class="left-section">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Google_2015_logo.svg" alt="Google Logo">
+            </div>
+            <div class="text">
+                <p>Sign in</p>
+                <p>Use your Google Account</p>
+            </div>
         </div>
-        <div class="text">
-            <p>Sign in</p>
-            <p>Use your Google Account</p>
-        </div>
-        <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
-        <br>
-        <a href="#" class="link">Forgot email?</a>
-        <p>Not your computer? Use a private browsing window to sign in. <br>
-           <a href="#" class="link">Learn more about using Guest mode</a></p>
-        <div class="btn-container">
-            <a href="#" class="link">Create account</a>
-            <button class="btn" onclick="goToPasswordPage()">Next</button>
+
+        <div class="right-section">
+            <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
+            <br>
+            <a href="#" class="link">Forgot email?</a>
+            <p>Not your computer? Use a private browsing window to sign in. <br>
+               <a href="#" class="link">Learn more about using Guest mode</a></p>
+            <div class="btn-container">
+                <a href="#" class="link">Create account</a>
+                <button class="btn" onclick="goToPasswordPage()">Next</button>
+            </div>
         </div>
     </div>
 
@@ -145,10 +157,10 @@
     </div>
 
     <div class="footer">
-        <a href="#" onclick="alert('Redirecting to English (United Kingdom) settings')">English (United Kingdom)</a> | 
-        <a href="#" onclick="alert('Redirecting to Help page')">Help</a> | 
-        <a href="#" onclick="alert('Redirecting to Privacy page')">Privacy</a> | 
-        <a href="#" onclick="alert('Redirecting to Terms page')">Terms</a>
+        <a href="#" onclick="changeLanguage()">English (United Kingdom)</a> | 
+        <a href="#" onclick="openHelpPage()">Help</a> | 
+        <a href="#" onclick="openPrivacyPage()">Privacy</a> | 
+        <a href="#" onclick="openTermsPage()">Terms</a>
     </div>
 
     <script>
@@ -173,6 +185,31 @@
             } else {
                 alert("Incorrect password. Please try again.");
             }
+        }
+
+        // Footer link actions
+        function changeLanguage() {
+            alert("Redirecting to language settings...");
+            // You can redirect to another page using:
+            // window.location.href = "https://www.google.com/preferences";
+        }
+
+        function openHelpPage() {
+            alert("Redirecting to Help page...");
+            // Redirecting to Help page:
+            window.open("https://support.google.com", "_blank");
+        }
+
+        function openPrivacyPage() {
+            alert("Redirecting to Privacy page...");
+            // Redirecting to Privacy page:
+            window.open("https://policies.google.com/privacy", "_blank");
+        }
+
+        function openTermsPage() {
+            alert("Redirecting to Terms page...");
+            // Redirecting to Terms page:
+            window.open("https://policies.google.com/terms", "_blank");
         }
     </script>
 </body>
