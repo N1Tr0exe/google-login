@@ -21,8 +21,8 @@
             background-color: #0e0e0e;
             padding: 30px;
             border-radius: 25px;
-            width: 1000px;
-            height: 380px;
+            width: 600px;
+            height: 500px;
             color: white;
             display: flex;
             justify-content: center;
@@ -44,8 +44,8 @@
             margin-right: 10px;
         }
         .text {
-            text-align: center;
-            margin-top: 70px;
+            text-align: left;
+            margin-top: 60px;
         }
         #signinText {
             font-size: 24px;
@@ -84,7 +84,7 @@
         }
         .btn-container {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             margin-top: 20px;
         }
         .btn {
@@ -95,6 +95,7 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
+            margin-left: 10px;
         }
         .footer {
             margin-top: 20px;
@@ -121,19 +122,21 @@
         <div class="logo">
             <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
         </div>
+        
+        <!-- Sign In Text and Google Account Text -->
         <div class="text">
             <p id="signinText">Sign in</p>
             <p id="useGoogleText">Use your Google Account</p>
         </div>
-
-        <!-- Forgot Email Link -->
-        <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
         <!-- Email or Phone Input -->
         <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
         
         <!-- Password Input (hidden initially) -->
         <input type="password" id="passwordInput" class="input-box" placeholder="Password" style="display: none;">
+        
+        <!-- Forgot Email Link -->
+        <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
         <!-- Guest Mode Text -->
         <div class="guest-mode">
@@ -143,7 +146,7 @@
 
         <!-- Button Container -->
         <div class="btn-container">
-            <a href="#" class="link" id="createAccountLink" style="align-self: center;">Create account</a>
+            <a href="#" class="link" id="createAccountLink">Create account</a>
             <button class="btn" id="nextButton" onclick="goToPasswordPage()">Next</button>
         </div>
     </div>
