@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: black;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #121212;
+            padding: 50px;
+            border-radius: 12px;
+            width: 450px;
+            height: 350px;
+            text-align: left;
+            color: white;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 30px;
+            margin-right: 15px;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background: #333;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .link {
+            color: #8ab4f8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .btn {
+            background: #8ab4f8;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            text-align: center;
+            color: white;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        /* Password Page Styling */
+        #passwordPage {
+            display: none;
+            background-color: #121212;
+            color: white;
+            padding: 50px;
+            border-radius: 12px;
+            width: 450px;
+            height: 350px;
+            text-align: left;
+        }
+        .password-box {
+            width: 100%;
+            padding: 10px;
+            background: #333;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Email Input Page -->
+    <div class="container" id="emailPage">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Google_2015_logo.svg" alt="Google Logo">
+            <span>Sign in</span>
+        </div>
+        <p>Use your Google Account</p>
+        <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
+        <br>
+        <a href="#" class="link">Forgot email?</a>
+        <p>Not your computer? Use a private browsing window to sign in. <br>
+           <a href="#" class="link">Learn more about using Guest mode</a></p>
+        <div class="btn-container">
+            <a href="#" class="link">Create account</a>
+            <button class="btn" onclick="goToPasswordPage()">Next</button>
+        </div>
+    </div>
+
+    <!-- Password Page -->
+    <div class="container" id="passwordPage">
+        <h2>Enter your password</h2>
+        <input type="password" id="passwordInput" class="password-box" placeholder="Password">
+        <br>
+        <div class="btn-container">
+            <button class="btn" onclick="submitPassword()">Sign In</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="#">English (United Kingdom)</a> | <a href="#">Help</a> | <a href="#">Privacy</a> | <a href="#">Terms</a>
+    </div>
+
+    <script>
+        // Function to go to password page after clicking "Next"
+        function goToPasswordPage() {
+            var email = document.getElementById('emailInput').value;
+            if (email) {
+                // If email is provided, hide the email page and show the password page
+                document.getElementById('emailPage').style.display = 'none';
+                document.getElementById('passwordPage').style.display = 'block';
+            } else {
+                alert("Please enter an email address.");
+            }
+        }
+
+        // Function to simulate password verification
+        function submitPassword() {
+            var password = document.getElementById('passwordInput').value;
+            if (password === "mySecretPassword") {
+                alert("Sign-in successful!");
+                // Redirect to another page or dashboard (optional)
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
