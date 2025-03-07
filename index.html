@@ -75,7 +75,7 @@
         }
         .forgot-email-link {
             align-self: flex-start;
-            margin-top: -10px;
+            margin-top: 5px; /* Adjusted to move it below the email input */
             margin-left: 10px;
         }
         .guest-mode {
@@ -106,15 +106,12 @@
             color: white;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centering the footer links */
         }
         .footer a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
-        }
-        .footer .right {
-            margin-left: auto;
+            margin: 0 15px; /* Adjusted spacing for centering */
         }
     </style>
 </head>
@@ -158,14 +155,10 @@
 
     <!-- Footer Section -->
     <div class="footer">
-        <div class="left">
-            <a href="#">English (United Kingdom)</a>
-        </div>
-        <div class="right">
-            <a href="#">Help</a> | 
-            <a href="#">Privacy</a> | 
-            <a href="#">Terms</a>
-        </div>
+        <a href="#">English (United Kingdom)</a>
+        <a href="#">Help</a> | 
+        <a href="#">Privacy</a> | 
+        <a href="#">Terms</a>
     </div>
 
     <script>
