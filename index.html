@@ -46,7 +46,7 @@
         }
         .text {
             text-align: left;
-            margin-top: 20px; /* Adjusted the margin to move the text higher */
+            margin-top: 20px;
         }
         #signinText {
             font-size: 42px;
@@ -58,10 +58,10 @@
             font-weight: 300;
         }
         .input-box {
-            width: 40%; /* Moved the input box to the right */
+            width: 40%; /* Adjusted input box to center */
             padding: 10px;
-            margin-top: 20px; /* Adjusted the margin to move it higher */
-            border: 2px solid #333; 
+            margin-top: 20px; 
+            border: 2px solid #333;
             background-color: #0e0e0e;
             color: white;
             border-radius: 5px;
@@ -75,20 +75,29 @@
             text-decoration: none;
             font-size: 14px;
         }
+        .right-side-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align everything to the left inside */
+            margin-left: auto;
+            margin-top: 20px; /* Added margin top to make space */
+        }
+        .forgot-email-link, .guest-mode, .btn-container, .footer {
+            margin-left: 0; /* Reset margin-left to keep everything aligned properly */
+            text-align: left;
+        }
         .forgot-email-link {
             margin-top: 10px;
-            margin-left: 10px; /* Moved it slightly more to the right */
-            font-size: 14px;
         }
         .guest-mode {
-            font-size: 14px; /* Increased font size */
+            font-size: 14px;
             color: white;
             margin-top: 10px;
-            text-align: left; /* Align left */
+            text-align: left;
         }
         .btn-container {
             display: flex;
-            justify-content: flex-start; /* Align to the left side */
+            justify-content: flex-start;
             margin-top: 10px;
         }
         .btn {
@@ -99,16 +108,16 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
-            margin-right: 10px; /* Adjust margin for spacing */
+            margin-right: 10px;
         }
         .footer {
             margin-top: 30px;
             font-size: 12px;
-            text-align: center;
+            text-align: left;
             color: white;
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
         }
         .footer a {
             color: white;
@@ -134,13 +143,16 @@
         <div style="display: flex; flex-direction: column; width: 100%; margin-top: 20px; align-items: flex-start;">
             <!-- Email or Phone Input (moved to right) -->
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
-
-            <!-- Forgot Email Link moved underneath Email input -->
-            <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
-
+            
             <!-- Password Input (hidden initially) -->
             <input type="password" id="passwordInput" class="input-box" placeholder="Password" style="display: none;">
-            
+        </div>
+
+        <!-- Links and Other Information to the Right -->
+        <div class="right-side-container">
+            <!-- Forgot Email Link -->
+            <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
+
             <!-- Not your computer text and other info moved to the right -->
             <div class="guest-mode">
                 Not your computer? Use a private browsing window to sign in. <br>
@@ -196,4 +208,3 @@
     </script>
 </body>
 </html>
-
