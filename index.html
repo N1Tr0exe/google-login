@@ -22,7 +22,7 @@
             padding: 30px;
             border-radius: 25px;
             width: 1000px;
-            height: 360px;
+            height: 480px; /* Increased the height */
             color: white;
             display: flex;
             justify-content: flex-start;
@@ -31,7 +31,7 @@
             position: relative;
         }
         .logo {
-            font-size: 38px;
+            font-size: 34px;
             font-weight: bold;
             color: white;
             position: absolute;
@@ -41,12 +41,12 @@
             align-items: center;
         }
         .logo img {
-            width: 52px;
+            width: 50px;
             margin-right: 10px;
         }
         .text {
             text-align: left;
-            margin-top: 60px;
+            margin-top: 20px; /* Adjusted the margin to move the text higher */
         }
         #signinText {
             font-size: 45px;
@@ -58,7 +58,7 @@
             font-weight: 300;
         }
         .input-box {
-            width: 45%;
+            width: 50%; /* Centered the input box */
             padding: 10px;
             margin-top: 10px;
             border: 2px solid #333; 
@@ -67,6 +67,8 @@
             border-radius: 5px;
             font-size: 16px;
             height: 40px;
+            margin-left: auto;
+            margin-right: auto; /* Center horizontally */
         }
         .link {
             color: #8ab4f8;
@@ -74,20 +76,19 @@
             font-size: 14px;
         }
         .forgot-email-link {
-            align-self: flex-start;
-            margin-top: 5px;
-            margin-right: 10px; /* Move it to the left of the email box */
+            align-self: center;
+            margin-top: 10px; /* Moved it under the email input box */
         }
         .guest-mode {
-            font-size: 12px;
+            font-size: 14px; /* Increased font size */
             color: white;
             margin-top: 15px;
-            text-align: left;
+            text-align: center; /* Centered the guest mode text */
         }
         .btn-container {
             display: flex;
-            justify-content: flex-start;
-            margin-top: 20px;
+            justify-content: center; /* Center buttons */
+            margin-top: 10px;
         }
         .btn {
             background: #8ab4f8;
@@ -100,7 +101,7 @@
             margin-left: 10px;
         }
         .footer {
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 12px;
             text-align: center;
             color: white;
@@ -129,8 +130,8 @@
         </div>
 
         <!-- Form Inputs and Links on the Right -->
-        <div style="display: flex; flex-direction: column; align-items: flex-end; width: 100%; margin-top: -30px;">
-            <!-- Forgot Email Link (moved to the left of the email input) -->
+        <div style="display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 20px;">
+            <!-- Forgot Email Link -->
             <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
             <!-- Email or Phone Input -->
