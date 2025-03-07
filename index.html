@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - Google account </title>
+    <title>Sign In - Google account</title>
     <style>
         body {
             background-color: #1e1f20;
@@ -43,7 +43,10 @@
         .text {
             font-size: 18px;
             margin-top: 60px;
-            left: 20px;     /* Move the "Sign in" and "Use your Google Account" text higher */
+            text-align: left;
+            position: absolute;
+            left: 20px; /* Align text to the left */
+            top: 80px; /* Place the text below the logo */
         }
         .input-box {
             width: 100%;
@@ -114,7 +117,7 @@
     <!-- Email Input Page -->
     <div class="container" id="emailPage">
         <div class="logo">
-            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AGoogle_%2522G%2522_logo.svg&psig=AOvVaw1TGNDxtfB_xH9prZyEXvQO&ust=1741469777742000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjl4c32-IsDFQAAAAAdAAAAABAZ" alt="Google Logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Google_2015_logo.svg" alt="Google Logo">
         </div>
         <div class="text">
             <p>Sign in</p>
@@ -142,7 +145,10 @@
     </div>
 
     <div class="footer">
-        <a href="#">English (United Kingdom)</a> | <a href="#">Help</a> | <a href="#">Privacy</a> | <a href="#">Terms</a>
+        <a href="#" onclick="alert('Redirecting to English (United Kingdom) settings')">English (United Kingdom)</a> | 
+        <a href="#" onclick="alert('Redirecting to Help page')">Help</a> | 
+        <a href="#" onclick="alert('Redirecting to Privacy page')">Privacy</a> | 
+        <a href="#" onclick="alert('Redirecting to Terms page')">Terms</a>
     </div>
 
     <script>
