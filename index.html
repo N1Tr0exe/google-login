@@ -76,8 +76,10 @@
             font-size: 14px;
         }
         .forgot-email-link {
-            margin-left: 0; /* Move forgot email text to the left */
             margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 14px; /* Set the font size */
         }
         .guest-mode {
             font-size: 14px; /* Increased font size */
@@ -131,11 +133,11 @@
 
         <!-- Form Inputs and Links on the Right -->
         <div style="display: flex; flex-direction: column; width: 100%; margin-top: 20px; align-items: flex-start;">
-            <!-- Forgot Email Link -->
-            <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
-
             <!-- Email or Phone Input (moved to right) -->
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
+
+            <!-- Forgot Email Link moved underneath Email input -->
+            <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
             <!-- Password Input (hidden initially) -->
             <input type="password" id="passwordInput" class="input-box" placeholder="Password" style="display: none;">
