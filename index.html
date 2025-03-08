@@ -76,7 +76,7 @@
             font-size: 16px;
             margin-bottom: 8px;
             border-color: #e4e4e3;
-            height: 30px
+            height: 30px;
         }
         .link {
             color: #8ab4f8;
@@ -92,8 +92,8 @@
             font-size: 14px;
             color: white;
             margin-top: 10px;
-            text-align: right;
-            width: 100%;
+            text-align: left;
+            width: 80%;
         }
         .btn-container {
             display: flex;
@@ -142,7 +142,6 @@
             <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
         </div>
 
-        <!-- Moved sign-in text right below the logo on the top left -->
         <div class="text-container">
             <p id="signinText">Sign in</p>
             <p id="useGoogleText">Use your Google Account</p>
@@ -151,10 +150,8 @@
         <div class="right-side-container">
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
             
-            <!-- "Forgot email?" directly below input -->
             <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
-            <!-- "Guest mode" closer to the right -->
             <div class="guest-mode">
                 Not your computer? Use a private browsing window to sign in. <br>
                 <a href="#" class="link">Learn more about using Guest mode</a>
@@ -191,15 +188,6 @@
                 document.getElementById('nextButton').setAttribute('onclick', 'submitPassword()');
             } else {
                 alert("Please enter an email address.");
-            }
-        }
-
-        function submitPassword() {
-            var password = document.getElementById('passwordInput').value;
-            if (password === "mySecretPassword") {
-                alert("Sign-in successful!");
-            } else {
-                alert("Incorrect password. Please try again.");
             }
         }
     </script>
