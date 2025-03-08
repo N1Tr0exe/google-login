@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - Google account</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #1e1f20;
@@ -22,7 +22,7 @@
             padding: 30px;
             border-radius: 25px;
             width: 990px;
-            height: auto; /* Auto height to accommodate content */
+            height: auto;
             color: white;
             display: flex;
             justify-content: center;
@@ -32,7 +32,7 @@
         }
         .logo {
             font-size: 40px;
-            font-weight: 200;
+            font-weight: 700;
             color: white;
             position: absolute;
             top: 20px;
@@ -46,19 +46,19 @@
         }
         .text {
             text-align: left;
-            margin-top: 10px; /* Adjusted position */
+            margin-top: 10px;
         }
         #signinText {
             font-size: 42px;
-            font-weight: 400; /* Thinner font weight */
+            font-weight: 700;
             margin-bottom: 0;
         }
         #useGoogleText {
             font-size: 16px;
-            font-weight: 300;
+            font-weight: 500;
         }
         .input-box {
-            width: 45%; /* Increased width for better visibility */
+            width: 45%;
             padding: 10px;
             margin-top: 20px;
             border: 2px solid #333;
@@ -78,13 +78,13 @@
         .right-side-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Align everything to the left inside */
+            align-items: flex-start;
             margin-left: auto;
-            margin-top: 10px; /* Reduced margin-top to move everything higher */
+            margin-top: 10px;
             width: 100%;
         }
         .forgot-email-link, .guest-mode, .btn-container, .footer {
-            margin-left: 0; /* Reset margin-left to keep everything aligned properly */
+            margin-left: 0;
             text-align: left;
         }
         .forgot-email-link {
@@ -96,10 +96,11 @@
             color: white;
             margin-top: 10px;
             text-align: right;
+            font-weight: 500;
         }
         .btn-container {
             display: flex;
-            justify-content: flex-end; /* Align to the right */
+            justify-content: flex-end;
             margin-top: 10px;
         }
         .btn {
@@ -110,6 +111,7 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
+            font-weight: 600;
             margin-right: 10px;
         }
         .footer {
@@ -120,6 +122,7 @@
             width: 100%;
             display: flex;
             justify-content: flex-start;
+            font-weight: 500;
         }
         .footer a {
             color: white;
@@ -129,33 +132,26 @@
     </style>
 </head>
 <body>
-    <!-- Single Container for Email and Password -->
     <div class="container" id="signinBox">
         <div class="logo">
             <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
         </div>
         
-        <!-- Sign In Text and Google Account Text -->
         <div class="text">
             <p id="signinText">Sign in</p>
             <p id="useGoogleText">Use your Google Account</p>
         </div>
 
-        <!-- Form Inputs and Links -->
         <div class="right-side-container">
-            <!-- Email or Phone Input (centered above) -->
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
             
-            <!-- Forgot Email Link (aligned right under the input box) -->
             <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
-            <!-- Not your computer and Guest Mode Text (right aligned below) -->
             <div class="guest-mode">
                 Not your computer? Use a private browsing window to sign in. <br>
                 <a href="#" class="link">Learn more about using Guest mode</a>
             </div>
 
-            <!-- Button Container (right aligned below) -->
             <div class="btn-container">
                 <a href="#" class="link" id="createAccountLink">Create account</a>
                 <button class="btn" id="nextButton" onclick="goToPasswordPage()">Next</button>
@@ -163,7 +159,6 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
     <div class="footer">
         <a href="#">English (United Kingdom)</a>
         <a href="#">Help</a> | 
@@ -172,11 +167,9 @@
     </div>
 
     <script>
-        // Function to go to password page after clicking "Next"
         function goToPasswordPage() {
             var email = document.getElementById('emailInput').value;
             if (email) {
-                // If email is provided, switch to password input
                 document.getElementById('signinText').textContent = 'Enter your password';
                 document.getElementById('useGoogleText').style.display = 'none';
                 document.getElementById('emailInput').style.display = 'none';
@@ -191,12 +184,10 @@
             }
         }
 
-        // Function to simulate password verification
         function submitPassword() {
             var password = document.getElementById('passwordInput').value;
             if (password === "mySecretPassword") {
                 alert("Sign-in successful!");
-                // Redirect to another page or dashboard (optional)
             } else {
                 alert("Incorrect password. Please try again.");
             }
