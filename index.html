@@ -46,8 +46,8 @@
         .text-container {
             position: absolute;
             top: 80px;
-            right: 30px;
-            text-align: right;
+            left: 20px;
+            text-align: left;
         }
         #signinText {
             font-size: 38px;
@@ -133,6 +133,7 @@
             <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
         </div>
 
+        <!-- Moved sign-in text right below the logo on the top left -->
         <div class="text-container">
             <p id="signinText">Sign in</p>
             <p id="useGoogleText">Use your Google Account</p>
@@ -141,10 +142,10 @@
         <div class="right-side-container">
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
             
-            <!-- Moved "Forgot email?" directly below input -->
+            <!-- "Forgot email?" directly below input -->
             <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
-            <!-- Moved "Guest mode" closer to the right -->
+            <!-- "Guest mode" closer to the right -->
             <div class="guest-mode">
                 Not your computer? Use a private browsing window to sign in. <br>
                 <a href="#" class="link">Learn more about using Guest mode</a>
