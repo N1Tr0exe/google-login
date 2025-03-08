@@ -25,9 +25,9 @@
             height: 350px;
             color: white;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
             position: relative;
         }
         .logo {
@@ -44,9 +44,12 @@
             width: 54px;
             margin-right: 10px;
         }
+        .text-container {
+            width: 50%;
+            padding-left: 20px;
+        }
         .text {
             text-align: left;
-            margin-top: 10px;
         }
         #signinText {
             font-size: 38px;
@@ -57,8 +60,14 @@
             font-size: 16px;
             font-weight: 500;
         }
-        .input-box {
+        .right-side-container {
             width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .input-box {
+            width: 80%;
             padding: 10px;
             margin-top: 20px;
             border: 0.5px solid #c6c7c5;
@@ -68,7 +77,7 @@
             font-size: 16px;
             height: 35px;
             margin-left: auto;
-            margin-right: auto;
+            margin-right: 0;
             border-color: #e4e4e3;
         }
         .link {
@@ -76,33 +85,21 @@
             text-decoration: none;
             font-size: 14px;
         }
-        .right-side-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-left: auto;
-            margin-top: 10px;
-            width: 100%;
-        }
-        .forgot-email-link, .guest-mode, .btn-container, .footer {
-            margin-left: 0;
-            text-align: left;
-        }
         .forgot-email-link {
             margin-top: 10px;
-            text-align: right;
+            align-self: flex-start;
         }
         .guest-mode {
             font-size: 14px;
             color: white;
             margin-top: 10px;
-            text-align: right;
-            font-weight: 500;
+            text-align: left;
         }
         .btn-container {
             display: flex;
             justify-content: flex-end;
             margin-top: 10px;
+            width: 100%;
         }
         .btn {
             background: #8ab4f8;
@@ -134,18 +131,20 @@
 </head>
 <body>
     <div class="container" id="signinBox">
-        <div class="logo">
-            <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
-        </div>
-        
-        <div class="text">
-            <p id="signinText">Sign in</p>
-            <p id="useGoogleText">Use your Google Account</p>
+        <div class="text-container">
+            <div class="logo">
+                <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
+            </div>
+            <div class="text">
+                <p id="signinText">Sign in</p>
+                <p id="useGoogleText">Use your Google Account</p>
+            </div>
         </div>
 
         <div class="right-side-container">
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
             
+            <!-- Moved text below the email input -->
             <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
             <div class="guest-mode">
