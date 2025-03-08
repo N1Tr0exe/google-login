@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - Google account</title>
+    <title>Sign In - Google Account</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -22,11 +22,12 @@
             padding: 30px;
             border-radius: 25px;
             width: 990px;
-            height: 350px;
+            height: auto;
             color: white;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-start;
+            flex-direction: column;
             position: relative;
         }
         .logo {
@@ -43,61 +44,56 @@
             width: 54px;
             margin-right: 10px;
         }
-        .text-container {
-            position: absolute;
-            top: 80px;
-            left: 20px;
+        .text {
             text-align: left;
+            margin-top: 60px; /* Adjusted to be below Google logo */
+            margin-left: 20px;
         }
         #signinText {
             font-size: 38px;
             font-weight: 500;
-            margin-bottom: 0;
+            margin-bottom: 5px;
         }
         #useGoogleText {
             font-size: 16px;
             font-weight: 500;
         }
-        .right-side-container {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-left: auto;
-            margin-top: 50px;
-        }
         .input-box {
-            width: 100%;
-            padding: 12px;
+            width: 60%; /* Made input box longer */
+            padding: 10px;
+            margin-top: 20px;
             border: 0.5px solid #c6c7c5;
             background-color: #0e0e0d;
             color: white;
             border-radius: 5px;
             font-size: 16px;
-            margin-bottom: 8px;
+            height: 35px;
             border-color: #e4e4e3;
         }
-        .link {
-            color: #8ab4f8;
-            text-decoration: none;
-            font-size: 14px;
+        .right-side-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: auto;
+            margin-top: 10px;
+            width: 100%;
         }
         .forgot-email-link {
             margin-top: 5px;
-            align-self: flex-start;
+            font-size: 14px;
         }
         .guest-mode {
             font-size: 14px;
             color: white;
-            margin-top: 10px;
+            margin-top: 5px;
+            font-weight: 500;
             text-align: right;
-            width: 100%;
+            margin-left: auto; /* Pushes guest mode to the right */
         }
         .btn-container {
             display: flex;
             justify-content: flex-end;
-            margin-top: 20px;
-            width: 100%;
+            margin-top: 10px;
         }
         .btn {
             background: #8ab4f8;
@@ -107,17 +103,17 @@
             border-radius: 20px;
             cursor: pointer;
             font-size: 16px;
-            font-weight: 100;
+            font-weight: 500;
             margin-right: 10px;
         }
         .footer {
             margin-top: 20px;
             font-size: 12px;
-            text-align: left;
             color: white;
             width: 100%;
             display: flex;
             justify-content: space-between;
+            padding: 0 40px; /* Moves elements closer */
             font-weight: 500;
         }
         .footer-left {
@@ -129,7 +125,7 @@
         .footer a {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 8px; /* Reduces space between links */
         }
     </style>
 </head>
@@ -138,9 +134,8 @@
         <div class="logo">
             <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
         </div>
-
-        <!-- Moved sign-in text right below the logo on the top left -->
-        <div class="text-container">
+        
+        <div class="text">
             <p id="signinText">Sign in</p>
             <p id="useGoogleText">Use your Google Account</p>
         </div>
@@ -148,10 +143,8 @@
         <div class="right-side-container">
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
             
-            <!-- "Forgot email?" directly below input -->
             <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
-            <!-- "Guest mode" closer to the right -->
             <div class="guest-mode">
                 Not your computer? Use a private browsing window to sign in. <br>
                 <a href="#" class="link">Learn more about using Guest mode</a>
