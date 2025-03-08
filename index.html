@@ -22,11 +22,11 @@
             padding: 30px;
             border-radius: 25px;
             width: 990px;
-            height: 350px; /* Adjusted to accommodate the elements */
+            height: 500px; /* Adjusted to accommodate the elements */
             color: white;
             display: flex;
-            justify-content: space-between;
-            flex-direction: row;
+            justify-content: flex-start;
+            flex-direction: column;
         }
         .logo {
             font-size: 40px;
@@ -34,6 +34,7 @@
             color: white;
             display: flex;
             align-items: center;
+            margin-top: 20px;
         }
         .logo img {
             width: 54px;
@@ -41,7 +42,7 @@
         }
         .text {
             text-align: left;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         #signinText {
             font-size: 42px;
@@ -53,7 +54,7 @@
             font-weight: 300;
         }
         .input-box {
-            width: 80%; /* Made the email input box larger */
+            width: 70%; /* Made the email input box longer */
             padding: 10px;
             margin-top: 20px; 
             border: 2px solid #333;
@@ -125,11 +126,12 @@
 <body>
     <!-- Single Container for Email and Password -->
     <div class="container" id="signinBox">
+        <!-- Google Logo at the Top Left -->
         <div class="logo">
             <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
         </div>
 
-        <!-- Sign In Text and Google Account Text -->
+        <!-- Sign In Text and Google Account Text underneath the logo -->
         <div class="text">
             <p id="signinText">Sign in</p>
             <p id="useGoogleText">Use your Google Account</p>
