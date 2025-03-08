@@ -3,202 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - Google account</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <title>Sign In - Google Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #1e1f20;
-            color: black;
+            background-color: #f5f5f5;
+            color: #202124;
             font-family: 'Roboto', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column;
         }
         .container {
-            background-color: #0e0e0e;
-            padding: 30px;
-            border-radius: 25px;
-            width: 990px;
-            height: auto; /* Auto height to accommodate content */
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            width: 400px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
             position: relative;
         }
         .logo {
-            font-size: 40px;
-            font-weight: 200;
-            color: white;
             position: absolute;
             top: 20px;
-            left: 20px;
-            display: flex;
-            align-items: center;
+            right: 20px;
         }
         .logo img {
-            width: 54px;
-            margin-right: 10px;
+            width: 75px;
         }
-        .text {
-            text-align: left;
-            margin-top: 10px; /* Adjusted position */
+        .signin-text {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 60px 0 10px;
         }
-        #signinText {
-            font-size: 42px;
-            font-weight: 400; /* Thinner font weight */
-            margin-bottom: 0;
-        }
-        #useGoogleText {
+        .use-google-text {
             font-size: 16px;
-            font-weight: 300;
+            font-weight: 400;
+            margin-bottom: 30px;
         }
         .input-box {
-            width: 45%; /* Increased width for better visibility */
-            padding: 10px;
-            margin-top: 20px;
-            border: 2px solid #333;
-            background-color: #0e0e0e;
-            color: white;
-            border-radius: 5px;
-            font-size: 16px;
-            height: 40px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .link {
-            color: #8ab4f8;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .right-side-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align everything to the left inside */
-            margin-left: auto;
-            margin-top: 10px; /* Reduced margin-top to move everything higher */
             width: 100%;
-        }
-        .forgot-email-link, .guest-mode, .btn-container, .footer {
-            margin-left: 0; /* Reset margin-left to keep everything aligned properly */
-            text-align: left;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            font-size: 16px;
         }
         .forgot-email-link {
-            margin-top: 10px;
+            display: block;
             text-align: right;
+            margin-bottom: 30px;
         }
-        .guest-mode {
+        .link {
+            color: #1a73e8;
+            text-decoration: none;
             font-size: 14px;
-            color: white;
-            margin-top: 10px;
-            text-align: right;
         }
         .btn-container {
             display: flex;
-            justify-content: flex-end; /* Align to the right */
-            margin-top: 10px;
+            justify-content: flex-end;
+            align-items: center;
         }
         .btn {
-            background: #8ab4f8;
-            color: black;
+            background: #1a73e8;
+            color: #fff;
             padding: 10px 20px;
             border: none;
-            border-radius: 20px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
-            margin-right: 10px;
+            font-size: 14px;
+            margin-left: 20px;
         }
-        .footer {
-            margin-top: 30px;
-            font-size: 12px;
-            text-align: left;
-            color: white;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
+        .btn:disabled {
+            background: #e8eaed;
+            color: #3c4043;
+            cursor: default;
         }
-        .footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
+        .create-account-link {
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <!-- Single Container for Email and Password -->
-    <div class="container" id="signinBox">
+    <div class="container">
         <div class="logo">
-            <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo">
         </div>
-        
-        <!-- Sign In Text and Google Account Text -->
-        <div class="text">
-            <p id="signinText">Sign in</p>
-            <p id="useGoogleText">Use your Google Account</p>
+        <div class="signin-text">Sign in</div>
+        <div class="use-google-text">Use your Google Account</div>
+        <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
+        <a href="#" class="link forgot-email-link">Forgot email?</a>
+        <div class="btn-container">
+            <a href="#" class="link create-account-link">Create account</a>
+            <button class="btn" id="nextButton" onclick="goToPasswordPage()">Next</button>
         </div>
-
-        <!-- Form Inputs and Links -->
-        <div class="right-side-container">
-            <!-- Email or Phone Input (centered above) -->
-            <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
-            
-            <!-- Forgot Email Link (aligned right under the input box) -->
-            <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
-
-            <!-- Not your computer and Guest Mode Text (right aligned below) -->
-            <div class="guest-mode">
-                Not your computer? Use a private browsing window to sign in. <br>
-                <a href="#" class="link">Learn more about using Guest mode</a>
-            </div>
-
-            <!-- Button Container (right aligned below) -->
-            <div class="btn-container">
-                <a href="#" class="link" id="createAccountLink">Create account</a>
-                <button class="btn" id="nextButton" onclick="goToPasswordPage()">Next</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Section -->
-    <div class="footer">
-        <a href="#">English (United Kingdom)</a>
-        <a href="#">Help</a> | 
-        <a href="#">Privacy</a> | 
-        <a href="#">Terms</a>
     </div>
 
     <script>
-        // Function to go to password page after clicking "Next"
         function goToPasswordPage() {
             var email = document.getElementById('emailInput').value;
             if (email) {
-                // If email is provided, switch to password input
-                document.getElementById('signinText').textContent = 'Enter your password';
-                document.getElementById('useGoogleText').style.display = 'none';
-                document.getElementById('emailInput').style.display = 'none';
-                document.getElementById('forgotEmailLink').style.display = 'none';
-                document.getElementById('guestModeText').style.display = 'none';
-                document.getElementById('createAccountLink').style.display = 'none';
-                document.getElementById('passwordInput').style.display = 'block';
-                document.getElementById('nextButton').textContent = 'Sign In';
-                document.getElementById('nextButton').setAttribute('onclick', 'submitPassword()');
+                // Proceed to password input (implementation depends on your authentication flow)
+                alert('Proceed to password input for ' + email);
             } else {
-                alert("Please enter an email address.");
-            }
-        }
-
-        // Function to simulate password verification
-        function submitPassword() {
-            var password = document.getElementById('passwordInput').value;
-            if (password === "mySecretPassword") {
-                alert("Sign-in successful!");
-                // Redirect to another page or dashboard (optional)
-            } else {
-                alert("Incorrect password. Please try again.");
+                alert('Please enter your email or phone.');
             }
         }
     </script>
