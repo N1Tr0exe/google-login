@@ -26,8 +26,7 @@
             color: white;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            flex-direction: row;
+            align-items: flex-start;
             position: relative;
         }
         .logo {
@@ -45,11 +44,10 @@
             margin-right: 10px;
         }
         .text-container {
-            width: 50%;
-            padding-left: 20px;
-        }
-        .text {
-            text-align: left;
+            position: absolute;
+            top: 80px;
+            right: 30px;
+            text-align: right;
         }
         #signinText {
             font-size: 38px;
@@ -65,19 +63,18 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            margin-left: auto;
+            margin-top: 50px;
         }
         .input-box {
-            width: 80%;
-            padding: 10px;
-            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
             border: 0.5px solid #c6c7c5;
             background-color: #0e0e0d;
             color: white;
             border-radius: 5px;
             font-size: 16px;
-            height: 35px;
-            margin-left: auto;
-            margin-right: 0;
+            margin-bottom: 8px;
             border-color: #e4e4e3;
         }
         .link {
@@ -86,19 +83,20 @@
             font-size: 14px;
         }
         .forgot-email-link {
-            margin-top: 10px;
+            margin-top: 5px;
             align-self: flex-start;
         }
         .guest-mode {
             font-size: 14px;
             color: white;
             margin-top: 10px;
-            text-align: left;
+            text-align: right;
+            width: 100%;
         }
         .btn-container {
             display: flex;
             justify-content: flex-end;
-            margin-top: 10px;
+            margin-top: 20px;
             width: 100%;
         }
         .btn {
@@ -131,22 +129,22 @@
 </head>
 <body>
     <div class="container" id="signinBox">
+        <div class="logo">
+            <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
+        </div>
+
         <div class="text-container">
-            <div class="logo">
-                <img src="https://storage.googleapis.com/libraries-lib-production/images/GoogleLogo-canvas-404-300px.original.png" alt="Google Logo">
-            </div>
-            <div class="text">
-                <p id="signinText">Sign in</p>
-                <p id="useGoogleText">Use your Google Account</p>
-            </div>
+            <p id="signinText">Sign in</p>
+            <p id="useGoogleText">Use your Google Account</p>
         </div>
 
         <div class="right-side-container">
             <input type="text" id="emailInput" class="input-box" placeholder="Email or phone">
             
-            <!-- Moved text below the email input -->
+            <!-- Moved "Forgot email?" directly below input -->
             <a href="#" class="link forgot-email-link" id="forgotEmailLink">Forgot email?</a>
 
+            <!-- Moved "Guest mode" closer to the right -->
             <div class="guest-mode">
                 Not your computer? Use a private browsing window to sign in. <br>
                 <a href="#" class="link">Learn more about using Guest mode</a>
